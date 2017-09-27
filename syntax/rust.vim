@@ -2,10 +2,8 @@ if exists("b:current_syntax")
     finish
 endif
 
-syn match Keyword '\(pub\s\+\)\?fn\s\+[a-zA-Z][a-zA-Z0-9_]*'
-syn match Keyword 'type\s\+[a-zA-Z][a-zA-Z0-9_]*'
-syn match Keyword 'struct\s\+[a-zA-Z][a-zA-Z0-9_]*'
-syn match Keyword 'impl\s\+[a-zA-Z][a-zA-Z0-9_]*'
+syn match Keyword '\v(pub\s+)?(extern\s+)?fn\s+[a-zA-Z][a-zA-Z0-9_]*'
+syn match Keyword '\v(type|struct|impl|enum)\s+[a-zA-Z][a-zA-Z0-9_]*'
 syn region Normal start=+"+ skip=+\\"+ end=+"+
 syn keyword Keyword use extern crate
 syn match Normal '^\s*\/\/.*'
